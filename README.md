@@ -17,23 +17,35 @@ Dear Dairy is a personal journaling application built to support mental health a
 
 ---
 
+## Research Summary
+For detailed references and peer-reviewed research supporting this project, see [Dear Dairy — Research Summary on Emotional Suppression in Young Adults](./DEAR_DAIRY_RESEARCH.md).
+
+---
+
 ## Features
 
 ### 🧠 Emotion Detection
+- Detects user emotions using NLP models (**DistilBERT**, **Gemma:2B**, **Gemini API**).
+- Can integrate HuggingFace datasets like `dair-ai/emotion` or `go_emotions`.
 - Detects user emotions using NLP models (**DistilBERT**, **Gemma:2B**, **Gemini API**).
 - Can integrate HuggingFace datasets like `dair-ai/emotion` or `go_emotions`.
 
 ### 💬 AI Replies
 - Generates **empathetic, supportive responses** tailored to user mood.
 - Responses are dynamically generated using **Gemma / Gemini**, ensuring contextual relevance.
+- Responses are dynamically generated using **Gemma / Gemini**, ensuring contextual relevance.
 
 ### 📊 Mood Insights & Trends
+- Dashboard displaying **emotion and mood patterns** over time.
+- Graphs for **weekly, monthly, and yearly insights**.
 - Dashboard displaying **emotion and mood patterns** over time.
 - Graphs for **weekly, monthly, and yearly insights**.
 
 ### 🎯 Personalized Suggestions
 - Motivational quotes.
 - Relaxation techniques.
+- Guided journaling prompts.
+- AI-powered coping strategies.
 - Guided journaling prompts.
 - AI-powered coping strategies.
 
@@ -74,6 +86,16 @@ For a detailed research summary, see [Dear Dairy Research Summary](./DEAR_DAIRY_
 | Deployment       | Local / Cloud-ready (Render, Heroku, VPS)  | Flexible deployment and scalability                                        |
 | Utilities & Frameworks | torch, transformers, tqdm, requests, pandas, numpy, matplotlib | Supports AI processing, data handling, and analytics                     |
 
+| Layer             | Technology & Packages                       | Why Chosen                                                                 |
+|------------------|--------------------------------------------|---------------------------------------------------------------------------|
+| Frontend         | Django Templates + Bootstrap + CSS          | Quick, responsive UI for desktop/web; easy to style & maintain             |
+| Backend          | Django + SQLite / MongoDB                   | Robust framework, ORM support, scalable storage options                   |
+| AI Models        | DistilBERT, Gemma:2B (local) + Gemini API  | Accurate emotion detection & empathetic responses; local fallback for privacy |
+| NLP & Embeddings | HuggingFace Transformers, tokenizers, torch | Pretrained models for emotion classification and embeddings               |
+| Visualization    | Django + Charts / Graphs                    | User-friendly mood tracking over time                                     |
+| Deployment       | Local / Cloud-ready (Render, Heroku, VPS)  | Flexible deployment and scalability                                        |
+| Utilities & Frameworks | torch, transformers, tqdm, requests, pandas, numpy, matplotlib | Supports AI processing, data handling, and analytics                     |
+
 ---
 
 ## Installation & Setup
@@ -88,6 +110,8 @@ For a detailed research summary, see [Dear Dairy Research Summary](./DEAR_DAIRY_
 ### Step 1: Install Ollama
 1. Download installer from [Ollama](https://ollama.com/).
 2. Install and verify:
+1. Download installer from [Ollama](https://ollama.com/).
+2. Install and verify:
 ```bash
 ollama --version
 ```
@@ -96,6 +120,7 @@ ollama --version
 ```bash
 ollama pull gemma:2b
 ```
+Ensure model is locally accessible.
 Ensure model is locally accessible.
 
 ### Step 3: Clone Repository
@@ -147,6 +172,7 @@ Visit `http://127.0.0.1:8000` to access the app.
 - Inspired by modern mental health practices, expressive writing research, and advanced ML techniques.
 
 ---
+
 
 ## Research Summary
 For detailed references and peer-reviewed research supporting this project, see [Dear Dairy — Research Summary on Emotional Suppression in Young Adults](./DEAR_DAIRY_RESEARCH.md).
