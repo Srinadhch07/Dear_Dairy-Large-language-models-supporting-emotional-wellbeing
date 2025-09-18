@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Past Entries</title>
+    <link rel="stylesheet" href="{% static '/css/entries.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.clouds.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.fog.min.js"></script>
+
+
+</head>
+<style>
+    body{
+        border: 2px solid black;
+    }
+    .entry-link {
+        text-decoration: none;
+        color: inherit; 
+        display: block; 
+    }
+    .entry-link:hover {
+        background-color: #f0f0f0; 
+        border-radius: 8px;
+    }
+    #vanta-bg {
+      width: 100%;
+      min-height: 100vh;
+      height: 100%; 
+    }
+</style>
+<body id="vanta-bg">
+    <div class="container">
+        
+        <h1>Previous Diary Entries</h1>
+        <a href="{% url 'index' %}" class="button-primary">Write Today dairy</a>
+        <a href="{% url 'home' %}" class="button-primary">Home</a>
+
+        <p class="subtle">Your saved diary moments with AI replies 💭</p>
+     <ul>
+    {% for entry in entries %}
+    <a href="{% url 'entry_detail' entry.id %}" class="entry-link">
+        <li>
+            <div class="entry-header">
+                <span class="entry-date">{{ entry.created_at }}</span>
+                <span class="emotion">
+                    {{ entry.detected_emotion }}
+                    <span>
+                    <a href="{% url 'delete_entry' entry.id %}" class="button-primary">delete</a>   
+                    </span>
+                </span>
+            </div>
+            <div class="entry-text">
+                {{ entry.text }}
+            </div>
+            <p class="entry-reply">
+                <strong>AI Reply:</strong> {{ entry.supportive_reply }}
+            </p>
+        </li>
+    </a>
+    {% empty %}
+    <li>No entries found.</li>
+    {% endfor %}
+</ul>
+    </div>
+</body>
+<script>
+    VANTA.FOG({
+      el: "#vanta-bg",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00
+    })
+</script>
+</html>

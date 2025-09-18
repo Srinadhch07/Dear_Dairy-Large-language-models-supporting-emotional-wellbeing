@@ -1,0 +1,62 @@
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #FFF9AF;
+}
+.diary-card {
+    border-radius: 15px;
+    background: #fff;
+    border: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.diary-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.diary-textarea {
+    border-radius: 12px;
+    padding: 15px;
+    font-size: 1rem;
+    line-height: 1.6;
+    resize: none;
+    border: 1px solid #ddd;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.diary-textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+.diary-btn {
+    font-size: 1.1rem;
+    padding: 10px 0;
+    border-radius: 10px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.diary-btn:hover {
+    transform: scale(1.03);
+}
+
+.btn-outline-primary,
+.btn-outline-success {
+    border-radius: 8px;
+    font-size: 0.95rem;
+    padding: 8px 15px;
+    transition: all 0.2s ease;
+}
+
+.btn-outline-primary:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.btn-outline-success:hover {
+    background-color: #28a745;
+    color: #fff;
+}

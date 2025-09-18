@@ -1,0 +1,147 @@
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f9f9f9, #ffffff);
+    margin: 0;
+    padding: 0;
+    color: #333;
+    border: 2px solid black;
+}
+
+.container {
+    width: 80%;
+    max-width: 900px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-size: 2.2rem;
+}
+
+.subtle {
+    text-align: center;
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 25px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background: #fdfdfd;
+    border: 2px solid #f0f0f0;
+    margin-bottom: 20px;
+    padding: 18px;
+    border-radius: 14px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    border-color: #e0e0e0;
+}
+
+.entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.entry-date {
+    font-size: 0.95rem;
+    color: #555;
+    font-weight: 600;
+}
+
+.emotion {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: #37ea17;
+}
+
+.emotion[data-e="happy"] { background: #4caf50; }
+.emotion[data-e="sad"] { background: #3498db; }
+.emotion[data-e="anger"] { background: #e74c3c; }
+.emotion[data-e="stress"] { background: #f39c12; }
+.emotion[data-e="calm"] { background: #9b59b6; }
+.emotion[data-e="confusion"] { background: #1abc9c; }
+.emotion[data-e="caring"] { background: #e67e22; }
+
+
+.entry-text {
+    font-size: 1.1rem;
+    margin: 12px 0;
+    line-height: 1.6;
+    color: #2c3e50;
+}
+
+.entry-reply {
+    font-size: 0.95rem;
+    background: #f7faff;
+    border-left: 4px solid #3498db;
+    padding: 10px 14px;
+    border-radius: 10px;
+    margin-top: 8px;
+    color: #34495e;
+}
+.diary-btn {
+    font-size: 1.1rem;
+    padding: 10px 0;
+  
+}
+.diary-btn:hover {
+    transform: scale(1.03);
+    background-color: #0056b3;
+}
+
+.btn-outline-primary,
+.btn-outline-success {
+    border-radius: 8px;
+    font-size: 0.95rem;
+    padding: 8px 15px;
+    transition: all 0.2s ease;
+}
+
+.btn-outline-primary:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.btn-outline-success:hover {
+    background-color: #28a745;
+    color: #fff;
+}
+.button-primary{
+    text-decoration: none;
+    border-radius: 10px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: background 0.3s ease;
+    margin: 6px;
+    border: none;
+    cursor: pointer;
+
+}
+
+  

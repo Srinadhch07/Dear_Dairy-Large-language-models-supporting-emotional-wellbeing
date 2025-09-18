@@ -1,0 +1,136 @@
+
+ * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+    font-family: Arial, sans-serif;
+    /* background-image: url('/images/backgrounds/wave-haikei.svg'); */
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+   
+
+    .login-container {
+      background:transparent;
+      padding: 40px 35px;
+      border-radius: 12px;
+      width: 100%;
+      max-width: 380px;
+      text-align: center;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.2);
+      animation: fadeIn 0.8s ease;
+    }
+
+    .title {
+      margin-bottom: 24px;
+      font-size: 26px;
+      font-weight: 600;
+      color: #1f2937;
+    }
+
+    /* ====== Form ====== */
+    .login-form input {
+      width: 100%;
+      padding: 12px 15px;
+      margin: 12px 0;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 15px;
+      transition: border-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .login-form input:focus {
+      border-color: #3b82f6;
+      outline: none;
+      transform: scale(1.02);
+    }
+
+
+    .login-form button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 15px;
+      border: none;
+      border-radius: 8px;
+      background: #3b82f6;
+      color: white;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+   
+
+    .login-form button:hover {
+      background: #2563eb;
+      transform: translateY(-2px);
+    }
+    .footer-text {
+      margin-top: 18px;
+      font-size: 14px;
+      color: #6b7280;
+    }
+
+    .footer-text a {
+      color: #3b82f6;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-text a:hover {
+      color: #2563eb;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+.message {
+  font-weight: bold;
+}
+.error-message{
+  color: red;
+}
+.success-message{
+  color: green;
+}
+a{
+  text-decoration: none;
+  color: blue;
+}
+p{
+  font-weight: 10px;
+}
+  ul{
+    display:none; 
+  }
+      label {
+            display: block;
+            margin-bottom: 0.5em;
+            font-weight: bold;
+        }
+
+        .helptext {
+            font-size: 0.8em;
+            color: #666;
+            margin-top: 0.5em;
+        }
+        ul.errorlist {
+          display: contents;
+            color: red;
+            font-size: 0.8em;
+            list-style-type: none;
+            padding: 0;
+            margin: 0.5em 0;
+        }
+
+  

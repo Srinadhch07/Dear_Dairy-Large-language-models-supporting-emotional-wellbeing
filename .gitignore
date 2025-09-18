@@ -1,0 +1,17 @@
+@"
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual env
+venv/
+
+# Databases
+*.sqlite3
+
+# IDE stuff
+.vscode/
+.idea/
+"@ | Out-File -Encoding utf8 .gitignore

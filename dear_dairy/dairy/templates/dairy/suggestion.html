@@ -1,0 +1,132 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.clouds.min.js"></script>
+
+    <title>AI Suggestions</title>
+    <style>
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(15px);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+
+        a.btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #007bff, #00c6ff);
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin: 5px 8px;
+            box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
+        }
+
+        a.btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 6px 18px rgba(0, 123, 255, 0.6);
+        }
+
+        .suggestion-card {
+            background: rgba(255, 255, 255, 0.3);
+            border-left: 6px solid #007bff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 12px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .suggestion-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .suggestion-type {
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            font-size: 0.85em;
+            letter-spacing: 1px;
+            background: linear-gradient(135deg, #007bff, #00c6ff);
+            background-clip:initial ;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        h1 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 15px;
+            color: #222;
+        }
+
+        p {
+            font-size: 1.05rem;
+            color: #444;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+    </style>
+    <link rel="stylesheet" href="{% static '/css/suggestions.css' %}">
+
+</head>
+<body class="vanta-bg">
+
+    <div class="container">
+        <a href="{% url 'index' %}" class="btn btn-primary">Write dairy</a>
+        <a href="{% url 'mood_dashboard' %}" class="btn btn-primary">View Mood Dashboard</a>
+        <a href="{% url 'view_entries' %}" class="btn btn-primary">Dairy entries</a>
+
+        <div class="suggestion-card">
+                    <div class="suggestion-type">AI Reply</div>
+                    <p>{{ supportive_reply }}</p>
+                </div>
+        <h1>Here some of my suggestions from my side.</h1>
+        <p>Here are some personalized tips for your mental and emotional wellbeing.</p>
+        
+        {% if suggestions %}
+            {% for suggestion in suggestions %}
+                <div class="suggestion-card">
+                    <div class="suggestion-type">{{ suggestion.type }}</div>
+                    <p>{{ suggestion.text }}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No suggestions were provided at this time.</p>
+        {% endif %}
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Diary Entry Details</title>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.clouds.min.js"></script>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Segoe UI", Roboto, sans-serif;
+            background: linear-gradient(135deg, #f9fafc, #e6f0ff);
+            color: #333;
+            line-height: 1.7;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            background: #fff;
+            max-width: 800px;
+            width: 100%;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            animation: fadeIn 0.6s ease-in-out;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            color: #34495e;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            border-left: 4px solid #6c63ff;
+            padding-left: 10px;
+        }
+
+        p {
+            margin-bottom: 12px;
+            font-size: 1rem;
+        }
+
+        strong {
+            color: #6c63ff;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        li {
+            background: #f8faff;
+            margin: 8px 0;
+            padding: 12px 16px;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 25px;
+            text-decoration: none;
+            background: #6c63ff;
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        a:hover {
+            background: #5a52e0;
+            transform: translateY(-2px);
+        }
+
+        /* Subtle fade-in animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>{{ entry.created_at|date:"F j, Y" }}</h1>
+        
+        <p><strong>Emotion:</strong> {{ entry.detected_emotion }}</p>
+        <p><strong>Your Text:</strong> {{ entry.text }}</p>
+    
+        <h2>AI Analysis</h2>
+        <p>{{ entry.emotion_analysis }}</p>
+    
+        <h2>Supportive Reply</h2>
+        <p>{{ entry.supportive_reply }}</p>
+    
+        <h2>Suggestions</h2>
+        <ul>
+            {% if entry.suggestions %}
+                {% load json_filters %}
+                {% for suggestion in entry.suggestions|json_loads %}
+                    <li><strong>{{ suggestion.type }}:</strong> {{ suggestion.text }}</li>
+                {% endfor %}
+            {% endif %}
+        </ul>
+    
+        <a href="{% url 'view_entries' %}">Back to all entries</a>
+    </div>
+</body>
+</html>
