@@ -2,51 +2,77 @@
 
 **Tagline:** *Your AI companion for mental wellbeing and self-reflection.*
 
-Dear Dairy is a personal journaling application designed to support mental health and emotional wellbeing. Users can log their thoughts, track moods, and receive empathetic AI-driven responses. Utilizing large language models like **Gemma:2B** and the **Gemini API**, the app generates supportive replies and provides insights on emotional trends.
+Dear Dairy is a personal journaling application built to support mental health and emotional wellbeing in young adults. It helps users log their thoughts, track moods, and receive empathetic AI-driven responses. The app is designed specifically for people struggling with **emotional suppression**, offering structured guidance, AI support, and evidence-based techniques to foster emotional expression.
 
-*Baked by focusing on untold thoughts and emotional entanglements*
+*Built to address the modern challenge of unexpressed emotions and to provide a safe, private digital space for reflection.*
+
+---
+
+## Why We Built Dear Dairy
+
+- Modern life often leads to **emotional suppression**, especially among young adults.
+- Suppressed emotions are strongly linked to **anxiety, depression, and reduced wellbeing**.
+- Journaling and expressive writing are **proven interventions** for improving mood and mental health.
+- Digital solutions make journaling **accessible, private, and scalable**, allowing integration with AI for enhanced support.
 
 ---
 
 ## Features
 
 ### 🧠 Emotion Detection
-- Detects user emotions using NLP models (**Gemma:2B**, **Gemini API**).
-- Optionally integrate **HuggingFace datasets** like `dair-ai/emotion` or `go_emotions`.
+- Detects user emotions using NLP models (**DistilBERT**, **Gemma:2B**, **Gemini API**).
+- Can integrate HuggingFace datasets like `dair-ai/emotion` or `go_emotions`.
 
 ### 💬 AI Replies
 - Generates **empathetic, supportive responses** tailored to user mood.
-- Responses are dynamically generated; no fixed replies.
-- Uses **Gemma / Gemini** for natural language responses.
+- Responses are dynamically generated using **Gemma / Gemini**, ensuring contextual relevance.
 
 ### 📊 Mood Insights & Trends
-- Dashboard displaying **mood patterns over time**.
-- Graphs for emotions **weekly, monthly, yearly**.
+- Dashboard displaying **emotion and mood patterns** over time.
+- Graphs for **weekly, monthly, and yearly insights**.
 
 ### 🎯 Personalized Suggestions
 - Motivational quotes.
 - Relaxation techniques.
-- Journaling prompts.
-- AI-generated coping strategies.
+- Guided journaling prompts.
+- AI-powered coping strategies.
 
 ### 🎨 Interactive UI
-- Home page with attractive CSS (cards, Bootstrap themes, gradients).
-- Past entries displayed as **cards** with date, text, emotion, and AI reply.
+- Modern, responsive interface using Django templates + Bootstrap + custom CSS.
+- Past entries displayed as **cards** with date, text, detected emotion, and AI reply.
 
-### 💾 Storage
-- Saves **text, detected emotion, and AI reply** into **SQLite** (or **MongoDB** for scaling).
+### 💾 Data Storage
+- Stores **text, detected emotion, and AI replies** in SQLite by default.
+- Scalable to MongoDB for multi-user deployments.
 
 ### 👥 Multi-user Login
-- Users can register and log in securely.
+- Secure registration and login.
 - Each user sees only their own entries.
 
 ---
 
+## Research-backed Approach
+
+The application is informed by **peer-reviewed research**, highlighting:
+- Emotional suppression in young adults leads to poor mental health outcomes.
+- Expressive writing and journaling improve mood and reduce stress.
+- Digital journaling interventions are effective and scalable.
+
+For a detailed research summary, see [Dear Dairy Research Summary](./DEAR_DAIRY_RESEARCH.md).
+
+---
+
 ## Technical Stack
-- **Frontend:** Django templates + Bootstrap + custom CSS
-- **Backend:** Django + SQLite (later MongoDB)
-- **AI Models:** Gemma:2B (local) + Gemini API (fallback support)
-- **Visualization:** Dashboards for mood patterns
+
+| Layer             | Technology & Packages                       | Why Chosen                                                                 |
+|------------------|--------------------------------------------|---------------------------------------------------------------------------|
+| Frontend         | Django Templates + Bootstrap + CSS          | Quick, responsive UI for desktop/web; easy to style & maintain             |
+| Backend          | Django + SQLite / MongoDB                   | Robust framework, ORM support, scalable storage options                   |
+| AI Models        | DistilBERT, Gemma:2B (local) + Gemini API  | Accurate emotion detection & empathetic responses; local fallback for privacy |
+| NLP & Embeddings | HuggingFace Transformers, tokenizers, torch | Pretrained models for emotion classification and embeddings               |
+| Visualization    | Django + Charts / Graphs                    | User-friendly mood tracking over time                                     |
+| Deployment       | Local / Cloud-ready (Render, Heroku, VPS)  | Flexible deployment and scalability                                        |
+| Utilities & Frameworks | torch, transformers, tqdm, requests, pandas, numpy, matplotlib | Supports AI processing, data handling, and analytics                     |
 
 ---
 
@@ -54,25 +80,23 @@ Dear Dairy is a personal journaling application designed to support mental healt
 
 ### Prerequisites
 - Python >= 3.10
-- Django >= 4.0
-- SQLite (default) or MongoDB (for scaling)
+- Django >= 5.2
+- SQLite (default) or MongoDB (scaling)
 - **Ollama** (for local LLM hosting)
 - **Gemma:2B** model
 
 ### Step 1: Install Ollama
-1. Visit [Ollama website](https://ollama.com/) and download the installer for your OS.
-2. Install Ollama locally following instructions.
-3. Verify installation:
+1. Download installer from [Ollama](https://ollama.com/).
+2. Install and verify:
 ```bash
 ollama --version
 ```
 
 ### Step 2: Install Gemma:2B LLM
-1. Open terminal and pull Gemma:2B via Ollama:
 ```bash
 ollama pull gemma:2b
 ```
-2. Ensure the model is downloaded and accessible locally.
+Ensure model is locally accessible.
 
 ### Step 3: Clone Repository
 ```bash
@@ -99,7 +123,7 @@ python manage.py migrate
 ```
 
 ### Step 7: Configure AI Access
-- Ensure **Gemma:2B** is available through Ollama.
+- Ensure **Gemma:2B** is available via Ollama.
 - Set **Gemini API key** in `.env` or `settings.py`.
 
 ### Step 8: Run Development Server
@@ -111,13 +135,18 @@ Visit `http://127.0.0.1:8000` to access the app.
 ---
 
 ## Future Expansion Ideas
-- Mobile app (React Native / Flutter frontend).
-- Community feature (share Dairy entries anonymously).
-- Subscription plan for premium features (deep insights, longer storage, AI-powered advice).
+- Mobile app frontend (React Native / Flutter).
+- Community features (share entries anonymously).
+- Subscription plan for premium features (extended insights, AI-driven guidance).
 
 ---
 
 ## Acknowledgements
-- Built with Django, Bootstrap, and LLMs (Gemma:2B & Gemini API).
-- Inspired by modern mental health and journaling practices.
+- Built with Django, Bootstrap, **DistilBERT**, **torch**, and multiple ML frameworks.
+- AI models include **Gemma:2B & Gemini API** for emotion detection and empathetic responses.
+- Inspired by modern mental health practices, expressive writing research, and advanced ML techniques.
 
+---
+
+## Research Summary
+For detailed references and peer-reviewed research supporting this project, see [Dear Dairy — Research Summary on Emotional Suppression in Young Adults](./DEAR_DAIRY_RESEARCH.md).
