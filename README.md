@@ -8,12 +8,18 @@ Dear Dairy is a personal journaling application built to support mental health a
 
 ---
 
+
 ## Why We Built Dear Dairy
 
 - Modern life often leads to **emotional suppression**, especially among young adults.
 - Suppressed emotions are strongly linked to **anxiety, depression, and reduced wellbeing**.
 - Journaling and expressive writing are **proven interventions** for improving mood and mental health.
 - Digital solutions make journaling **accessible, private, and scalable**, allowing integration with AI for enhanced support.
+
+---
+
+## Research Summary
+For detailed references and peer-reviewed research supporting this project, see [Dear Dairy — Research Summary on Emotional Suppression in Young Adults](./DEAR_DAIRY_RESEARCH.md).
 
 ---
 
@@ -147,6 +153,3 @@ Visit `http://127.0.0.1:8000` to access the app.
 - Inspired by modern mental health practices, expressive writing research, and advanced ML techniques.
 
 ---
-
-## Research Summary
-For detailed references and peer-reviewed research supporting this project, see [Dear Dairy — Research Summary on Emotional Suppression in Young Adults](./DEAR_DAIRY_RESEARCH.md).
