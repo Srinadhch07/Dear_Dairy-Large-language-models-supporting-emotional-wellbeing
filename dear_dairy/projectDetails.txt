@@ -2,7 +2,7 @@ Features / Enhancements:
 ----------------------------
 Emotion Detection::
 ---------------------
-Using NLP models (Gemma:2B, Gemini API).
+Using NLP models (qwen2:0.5b, Gemini API).
 
 Option to use HuggingFace datasets (e.g., dair-ai/emotion, go_emotions).
 
@@ -48,7 +48,7 @@ Frontend: Django templates + Bootstrap + custom CSS.
 
 Backend: Django + SQLite (later MongoDB).
 
-AI Models: Gemma:2B (local) + Gemini API (for replies).
+AI Models: qwen2:0.5b (local) + Gemini API (for replies).
 
 Visualization: Dashboards for mood patterns.
 

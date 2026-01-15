@@ -29,7 +29,7 @@
 
 #     try:
 #         response = ollama.chat(
-#             model="gemma:2b",
+#             model="qwen2:0.5b",
 #             messages=[{"role": "user", "content": prompt}]
 #         )
 #         print(f'AI reply: ',response['message']['content'])

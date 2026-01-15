@@ -21,10 +21,10 @@ from django.views.generic import RedirectView
 urlpatterns = [
     path('admin/', admin.site.urls),
      path('', include('dairy.urls')),
-     path('accounts/', include('django.contrib.auth.urls'))
+     path('accounts/', include('django.contrib.auth.urls')),
 ]
 
-urlpatterns = [
+urlpatterns = [ 
     path('admin/', admin.site.urls),
     # This includes all auth URLs (login, logout, password change, etc.)
     path('accounts/', include('django.contrib.auth.urls')),

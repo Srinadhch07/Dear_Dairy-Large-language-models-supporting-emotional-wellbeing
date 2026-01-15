@@ -23,6 +23,7 @@ def safe_json_loads(reply_str):
 
 def fallback_gemma_reply(dairy_input):
     prompt = f"""
+    
     You are a mental and wellbeing support AI assistant. Your job:
     1. Detect the single-word emotion from the diary text.
     2. Explain briefly why that emotion was detected.
@@ -50,7 +51,7 @@ def fallback_gemma_reply(dairy_input):
 
     try:
         response = ollama.chat(
-            model="gemma:2b",
+            model="qwen2:0.5b",
             messages=[{"role": "user", "content": prompt}],
             format="json"
         )
@@ -60,4 +61,41 @@ def fallback_gemma_reply(dairy_input):
         print(f"Fallback error: {e}")
         return None
 
-    
+
+
+def parent_supporter(text, context=""):
+    prompt = f"""
+You are a warm, emotionally intelligent parent companion and child-behavior guide.
+
+Here is the recent conversation between the parent and you:
+{context}
+
+Now the parent is continuing the conversation.
+
+You must:
+- Stay supportive and friendly in every reply
+- If the parent is okay, keep things warm and encouraging
+- If the parent is worried, gently comfort and guide them
+- Help the parent understand their child’s emotions
+- Never judge, blame, or create unnecessary drama
+- Speak naturally, like a kind human
+
+Parent’s new message:
+{text}
+
+Write one natural, caring reply that continues this conversation and supports the parent.
+"""
+
+    try:
+        response = ollama.chat(
+            # model="qwen2:0.5b",
+            model="gemma:2b",
+            messages=[{"role": "user", "content": prompt}],
+            options={"temperature": 0.6}
+        )
+
+        return response["message"]["content"].strip()
+
+    except Exception as e:
+        print("Parent AI error:", e)
+        return "I’m here with you. It sounds like you really care about your child, and that means a lot."

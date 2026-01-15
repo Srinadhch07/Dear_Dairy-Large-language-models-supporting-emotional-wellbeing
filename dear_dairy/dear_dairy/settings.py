@@ -113,6 +113,7 @@ USE_I18N = True
 
 USE_TZ = True
 TIME_ZONE = 'Asia/Kolkata'
+AUTH_USER_MODEL = 'dairy.User'
 
 
 # Static files (CSS, JavaScript, Images)
@@ -127,4 +128,5 @@ STATICFILES_DIRS = [BASE_DIR / "static"]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGOUT_REDIRECT_URL = 'login'
-LOGIN_REDIRECT_URL = 'home'
+# LOGIN_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = "/dairy/redirect/"
