@@ -1,8 +1,8 @@
-# Dear Diary – AI-powered Mental Wellbeing Diary for Teenagers & Parents
+# Dear Dairy – AI-powered Mental Wellbeing Diary for Teenagers & Parents
 
 **Tagline:** *A shared path to understanding emotions—bridging teenagers and parents.*
 
-Dear Diary is an AI-powered journaling and emotional wellbeing platform designed to support **teenagers** and help **parents better understand their emotional world**.
+Dear Dairy is an AI-powered journaling and emotional wellbeing platform designed to support **teenagers** and help **parents better understand their emotional world**.
 
 It provides a safe, private space where teenagers can freely express their thoughts, track moods, and receive empathetic AI-driven responses—while promoting emotional awareness, trust, and healthier communication within families.
 
@@ -12,7 +12,7 @@ The platform focuses on a critical adolescent challenge: **emotional suppression
 
 ---
 
-## Why We Built Dear Diary
+## Why We Built Dear Dairy
 
 * Teenagers often struggle to **express emotions openly** to parents or guardians.
 * Emotional suppression during adolescence is strongly linked to:
@@ -29,7 +29,7 @@ The platform focuses on a critical adolescent challenge: **emotional suppression
 
 ## Research Foundation
 
-Dear Diary is grounded in well-established psychological and behavioral research:
+Dear Dairy is grounded in well-established psychological and behavioral research:
 
 ### Emotional Suppression in Teenagers
 
@@ -251,4 +251,4 @@ http://127.0.0.1:8000
 
 ## License
 
-This project is intended for **educational, research, and mental wellbeing purposes**, with a focus on **teenage emotional health and parent–te
+This project is intended for **educational, research, and mental wellbeing purposes**, with a focus on **teenage emotional health and parent–teen understanding**.
