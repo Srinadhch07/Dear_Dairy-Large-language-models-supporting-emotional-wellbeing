@@ -1,4 +1,4 @@
-# Dear Dairy – AI-powered Mental Wellbeing Dairy for neurodiverse children
+# Dear Dairy – AI-powered Mental Wellbeing Dairy
 
 **Tagline:** _Your AI companion for mental wellbeing and self-reflection._
 
