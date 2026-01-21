@@ -1,25 +1,51 @@
-# Dear Dairy – AI-powered Mental Wellbeing Dairy
+# Dear Diary – AI-powered Mental Wellbeing Diary for Teenagers & Parents
 
-**Tagline:** _Your AI companion for mental wellbeing and self-reflection._
+**Tagline:** *A shared path to understanding emotions—bridging teenagers and parents.*
 
-Dear Dairy is a personal journaling application built to support mental health and emotional wellbeing in young adults. It helps users log their thoughts, track moods, and receive empathetic AI-driven responses. The app is designed specifically for people struggling with **emotional suppression**, offering structured guidance, AI support, and evidence-based techniques to foster emotional expression.
+Dear Diary is an AI-powered journaling and emotional wellbeing platform designed to support **teenagers** and help **parents better understand their emotional world**.
 
-_Built to address the modern challenge of unexpressed emotions and to provide a safe, private digital space for reflection._
+It provides a safe, private space where teenagers can freely express their thoughts, track moods, and receive empathetic AI-driven responses—while promoting emotional awareness, trust, and healthier communication within families.
 
----
+The platform focuses on a critical adolescent challenge: **emotional suppression, misunderstood feelings, and the widening emotional gap between teenagers and parents**.
 
-## Why We Built Dear Dairy
-
-- Modern life often leads to **emotional suppression**, especially among young adults.
-- Suppressed emotions are strongly linked to **anxiety, depression, and reduced wellbeing**.
-- Journaling and expressive writing are **proven interventions** for improving mood and mental health.
-- Digital solutions make journaling **accessible, private, and scalable**, allowing integration with AI for enhanced support.
+*Built to support emotional expression during formative years and to foster empathy, emotional literacy, and resilience.*
 
 ---
 
-## Research Summary
+## Why We Built Dear Diary
 
-For detailed references and peer-reviewed research supporting this project, see [Dear Dairy — Research Summary on Emotional Suppression in Young Adults](./DEAR_DAIRY_RESEARCH.md).
+* Teenagers often struggle to **express emotions openly** to parents or guardians.
+* Emotional suppression during adolescence is strongly linked to:
+
+  * Anxiety
+  * Stress
+  * Burnout
+  * Low self-esteem
+* Parents want to help but often **don’t know what their teenager is feeling internally**.
+* Journaling and expressive writing are **proven psychological tools** for emotional regulation.
+* AI enables **non-judgmental, always-available emotional support**.
+
+---
+
+## Research Foundation
+
+Dear Diary is grounded in well-established psychological and behavioral research:
+
+### Emotional Suppression in Teenagers
+
+* Adolescents often suppress emotions due to fear of judgment, academic pressure, and social expectations.
+* Long-term suppression increases risk of anxiety, emotional dysregulation, and mental health challenges.
+
+### Expressive Writing & Journaling
+
+* Expressive writing improves emotional clarity and self-awareness.
+* Regular journaling reduces stress and supports emotional regulation.
+
+### Digital Mental Health Interventions
+
+* Digital tools increase consistency and accessibility.
+* Privacy-first journaling encourages honesty and emotional openness.
+* AI-driven feedback increases engagement and emotional validation.
 
 ---
 
@@ -27,176 +53,202 @@ For detailed references and peer-reviewed research supporting this project, see 
 
 ### 🧠 Emotion Detection
 
-- Detects user emotions using NLP models (**DistilBERT**, **qwen2:0.5b**, **Gemini API**).
-- Can integrate HuggingFace datasets like `dair-ai/emotion` or `go_emotions`.
-- Detects user emotions using NLP models (**DistilBERT**, **qwen2:0.5b**, **Gemini API**).
-- Can integrate HuggingFace datasets like `dair-ai/emotion` or `go_emotions`.
+* Automatically detects emotional tone from journal entries.
+* Uses NLP models including:
 
-### 💬 AI Replies
+  * **DistilBERT**
+  * **qwen2:0.5b**
+  * **Gemini API**
+* Supports emotion datasets such as:
 
-- Generates **empathetic, supportive responses** tailored to user mood.
-- Responses are dynamically generated using **Gemma / Gemini**, ensuring contextual relevance.
-- Responses are dynamically generated using **Gemma / Gemini**, ensuring contextual relevance.
+  * `dair-ai/emotion`
+  * `go_emotions`
+
+### 💬 AI Emotional Support
+
+* Generates empathetic, age-appropriate responses.
+* Encourages emotional expression instead of suppression.
+* Uses **Gemma / Gemini** for context-aware replies.
 
 ### 📊 Mood Insights & Trends
 
-- Dashboard displaying **emotion and mood patterns** over time.
-- Graphs for **weekly, monthly, and yearly insights**.
-- Dashboard displaying **emotion and mood patterns** over time.
-- Graphs for **weekly, monthly, and yearly insights**.
+* Visual dashboards showing:
+
+  * Daily mood patterns
+  * Weekly and monthly emotional trends
+* Helps teenagers identify emotional cycles.
+* Supports parent understanding with consent (no private text exposure).
 
 ### 🎯 Personalized Suggestions
 
-- Motivational quotes.
-- Relaxation techniques.
-- Guided journaling prompts.
-- AI-powered coping strategies.
-- Guided journaling prompts.
-- AI-powered coping strategies.
+* Guided journaling prompts
+* Emotional regulation exercises
+* Relaxation and grounding techniques
+* Motivational and supportive messages
 
-### 🎨 Interactive UI
+### 🎨 Teen-friendly UI
 
-- Modern, responsive interface using Django templates + Bootstrap + custom CSS.
-- Past entries displayed as **cards** with date, text, detected emotion, and AI reply.
+* Clean, modern interface built with:
 
-### 💾 Data Storage
+  * Django Templates
+  * Bootstrap
+  * Custom CSS
+* Journal entries displayed as cards showing date, emotion, and AI response.
 
-- Stores **text, detected emotion, and AI replies** in SQLite by default.
-- Scalable to MongoDB for multi-user deployments.
+### 💾 Secure Data Storage
 
-### 👥 Multi-user Login
+* Stores journal text, detected emotions, and AI responses.
+* SQLite by default.
+* MongoDB supported for scalable deployments.
 
-- Secure registration and login.
-- Each user sees only their own entries.
+### 👥 Multi-user Support
 
----
-
-## Research-backed Approach
-
-The application is informed by **peer-reviewed research**, highlighting:
-
-- Emotional suppression in young adults leads to poor mental health outcomes.
-- Expressive writing and journaling improve mood and reduce stress.
-- Digital journaling interventions are effective and scalable.
-
-For a detailed research summary, see [Dear Dairy Research Summary](./DEAR_DAIRY_RESEARCH.md).
+* Secure authentication system.
+* Each teenager has a private account.
+* Privacy-first and ethics-focused design.
 
 ---
 
 ## Technical Stack
 
-| Layer                  | Technology & Packages                                          | Why Chosen                                                                    |
-| ---------------------- | -------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| Frontend               | Django Templates + Bootstrap + CSS                             | Quick, responsive UI for desktop/web; easy to style & maintain                |
-| Backend                | Django + SQLite / MongoDB                                      | Robust framework, ORM support, scalable storage options                       |
-| AI Models              | DistilBERT, qwen2:0.5b (local) + Gemini API                    | Accurate emotion detection & empathetic responses; local fallback for privacy |
-| NLP & Embeddings       | HuggingFace Transformers, tokenizers, torch                    | Pretrained models for emotion classification and embeddings                   |
-| Visualization          | Django + Charts / Graphs                                       | User-friendly mood tracking over time                                         |
-| Deployment             | Local / Cloud-ready (Render, Heroku, VPS)                      | Flexible deployment and scalability                                           |
-| Utilities & Frameworks | torch, transformers, tqdm, requests, pandas, numpy, matplotlib | Supports AI processing, data handling, and analytics                          |
-
-| Layer                  | Technology & Packages                                          | Why Chosen                                                                    |
-| ---------------------- | -------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| Frontend               | Django Templates + Bootstrap + CSS                             | Quick, responsive UI for desktop/web; easy to style & maintain                |
-| Backend                | Django + SQLite / MongoDB                                      | Robust framework, ORM support, scalable storage options                       |
-| AI Models              | DistilBERT, qwen2:0.5b (local) + Gemini API                    | Accurate emotion detection & empathetic responses; local fallback for privacy |
-| NLP & Embeddings       | HuggingFace Transformers, tokenizers, torch                    | Pretrained models for emotion classification and embeddings                   |
-| Visualization          | Django + Charts / Graphs                                       | User-friendly mood tracking over time                                         |
-| Deployment             | Local / Cloud-ready (Render, Heroku, VPS)                      | Flexible deployment and scalability                                           |
-| Utilities & Frameworks | torch, transformers, tqdm, requests, pandas, numpy, matplotlib | Supports AI processing, data handling, and analytics                          |
+| Layer         | Technology                         | Purpose                        |
+| ------------- | ---------------------------------- | ------------------------------ |
+| Frontend      | Django Templates, Bootstrap, CSS   | Responsive UI                  |
+| Backend       | Django                             | Secure application logic       |
+| Database      | SQLite / MongoDB                   | Data storage                   |
+| AI Models     | DistilBERT, qwen2:0.5b, Gemini API | Emotion detection & AI replies |
+| NLP           | HuggingFace Transformers, torch    | Text understanding             |
+| Visualization | Charts & Graphs                    | Mood tracking                  |
+| Deployment    | Local / Render / VPS               | Flexible hosting               |
 
 ---
 
-## Installation & Setup
+## Installation & Execution Steps
 
 ### Prerequisites
 
-- Python >= 3.10
-- Django >= 5.2
-- SQLite (default) or MongoDB (scaling)
-- **Ollama** (for local LLM hosting)
-- **qwen2:0.5b** model
+* Python **3.10 or higher**
+* Django **5.2 or higher**
+* SQLite (default) or MongoDB
+* **Ollama** (for running local LLMs)
+
+---
 
 ### Step 1: Install Ollama
 
-1. Download installer from [Ollama](https://ollama.com/).
-2. Install and verify:
-3. Download installer from [Ollama](https://ollama.com/).
-4. Install and verify:
+Download and install Ollama from:
+[https://ollama.com](https://ollama.com)
+
+Verify installation:
 
 ```bash
 ollama --version
 ```
 
-### Step 2: Install qwen2:0.5b & gemma:2b LLM 
+---
+
+### Step 2: Download Required AI Models
 
 ```bash
 ollama pull qwen2:0.5b
 ollama pull gemma:2b
 ```
 
-Ensure model is locally accessible.
-Ensure model is locally accessible.
+Ensure both models are available locally.
 
-### Step 3: Clone Repository
+---
+
+### Step 3: Clone the Repository
 
 ```bash
 git clone https://github.com/Srinadhch07/Dear-Dairy-Large-language-models-supporting-emotional-wellbeing.git
 cd Dear-Dairy-Large-language-models-supporting-emotional-wellbeing
 ```
 
-### Step 4: Create Virtual Environment
+---
+
+### Step 4: Create and Activate Virtual Environment
 
 ```bash
 python -m venv venv
-source venv/bin/activate   # Linux/macOS
+source venv/bin/activate   # Linux / macOS
 venv\Scripts\activate      # Windows
 ```
 
-### Step 5: Install Dependencies
+---
+
+### Step 5: Install Python Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### Step 6: Run Migrations
+---
+
+### Step 6: Run Database Migrations
 
 ```bash
 python manage.py makemigrations
 python manage.py migrate
 ```
 
+---
+
 ### Step 7: Configure AI Access
 
-- Ensure **qwen2:0.5b** is available via Ollama.
-- Set **Gemini API key** in `.env` or `settings.py`.
+* Ensure **qwen2:0.5b** is accessible via Ollama
+* Add your **Gemini API key** to `.env` or `settings.py`
 
-### Step 8: Run Development Server
+Example:
+
+```env
+GEMINI_API_KEY=your_api_key_here
+```
+
+---
+
+### Step 8: Run the Development Server
 
 ```bash
 python manage.py runserver
 ```
 
-Visit `http://127.0.0.1:8000` to access the app.
+Open your browser and visit:
+
+```
+http://127.0.0.1:8000
+```
+
+---
+
+## Usage Flow
+
+1. Register or log in as a user.
+2. Write a daily journal entry.
+3. The system detects emotional tone automatically.
+4. AI generates an empathetic response.
+5. Mood insights are updated on the dashboard.
 
 ---
 
 ## Future Expansion Ideas
 
-- Mobile app frontend (React Native / Flutter).
-- Community features (share entries anonymously).
-- Subscription plan for premium features (extended insights, AI-driven guidance).
+* Parent–teen emotional insight dashboard (consent-based)
+* Mobile app (React Native / Flutter)
+* School counseling integrations
+* Emotional literacy learning modules
+* Crisis escalation support
 
 ---
 
 ## Acknowledgements
 
-- Built with Django, Bootstrap, **DistilBERT**, **torch**, and multiple ML frameworks.
-- AI models include **qwen2:0.5b & Gemini API** for emotion detection and empathetic responses.
-- Inspired by modern mental health practices, expressive writing research, and advanced ML techniques.
+* Built using **Django**, **Bootstrap**, **DistilBERT**, and **PyTorch**
+* AI powered by **qwen2:0.5b** and **Gemini**
+* Inspired by adolescent psychology, expressive writing research, and digital mental health practices
 
 ---
 
-## Research Summary
+## License
 
-For detailed references and peer-reviewed research supporting this project, see [Dear Dairy — Research Summary on Emotional Suppression in Young Adults](./DEAR_DAIRY_RESEARCH.md).
+This project is intended for **educational, research, and mental wellbeing purposes**, with a focus on **teenage emotional health and parent–te
